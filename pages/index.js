@@ -98,18 +98,17 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>MedGpt</title>
+        <title>MedGPT</title>
         <meta name="description" content="LangChain documentation chatbot" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.topnav}>
       <div className = {styles.navlogo}>
-    <a href="/">Medicare</a>
+    <h1 href="/">MedGPT</h1>
     </div>
     <div className = {styles.navlinks}> 
-    <a href="https://langchain.readthedocs.io/en/latest/" target="_blank">Docs</a>
-    <a href="https://github.com/zahidkhawaja/langchain-chat-nextjs" target="_blank">GitHub</a>
+    <a href="https://github.com/aogara-ds/MedGPT" target="_blank">GitHub</a>
     </div>
 </div>
       <main className={styles.main}>
@@ -163,7 +162,7 @@ export default function Home() {
             </form>
             </div>
             <div className = {styles.footer}>
-            <p>Powered by medicare</p>
+            <a href="https://langchain.readthedocs.io/en/latest/" target="_blank">Built on LangChain</a>
             </div>
         </div>
       </main>
