@@ -15,7 +15,7 @@
 }
 
 .topnav {
-  background-color: #141619;
+  background-color: #6683b0;
   border-bottom: 1px solid #30373d;
   display: flex;
   justify-content: space-between;
@@ -84,7 +84,7 @@
   position: absolute;
   top: 0.87rem;
   right: 1rem;
-  color: rgb(165, 162, 162);
+  color: rgb(230, 109, 109);
   background: none;
   padding: 0.3rem;
   border: none;
@@ -105,7 +105,7 @@
 }
 
 .generatebutton:hover {
-  background: #1f2227;
+  background: #3f68af;
   border-radius: 0.2rem;
 }
 
