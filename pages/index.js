@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import CircularProgress from '@mui/material/CircularProgress';
+// import chat from '/api/chatGPT'
 
 export default function Home() {
 
@@ -50,7 +51,7 @@ export default function Home() {
     setMessages((prevMessages) => [...prevMessages, { "message": userInput, "type": "userMessage" }]);
 
     // Send user question and history to API
-    const response = await fetch("/api/chat", {
+    const response = await fetch("/api/chatGPT", {
       method: "POST",
       headers: {
           "Content-Type": "application/json",
@@ -58,23 +59,15 @@ export default function Home() {
       body: JSON.stringify({ question: userInput, history: history }),
     });
 
-    if (!response.ok) {
-      handleError();
-      return;
-  }
+    const data = await response.json();
 
     // Reset user input
     setUserInput("");
-    const data = await response.json();
 
-    if (data.result.error === "Unauthorized") {
-      handleError();
-      return;
-    }
-
-    setMessages((prevMessages) => [...prevMessages, { "message": data.result.success, "type": "apiMessage" }]);
+    // Load the new message
+    setMessages((prevMessages) => [...prevMessages, { "message": data.result, "type": "apiMessage" }]);
     setLoading(false);
-    
+
   };
 
   // Prevent blank submissions and allow for multiline input
